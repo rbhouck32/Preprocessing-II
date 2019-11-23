@@ -1,1 +1,34 @@
 // Navigation Styles here
+
+.nav-container {
+  // .flex("flex", "row", "wrap");
+  // justify-content: space-between;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  .justify(space-between);
+  align-items: baseline;
+  width: 100%;
+  border-bottom: 2px dashed @navigation-border;
+  padding: 20px 250px;
+  margin: 0 auto;
+  @media @mobile {
+    width: 60%;
+    padding: 40px 0px;
+
+    h1 {
+      font-size: 6rem;
+    }
+  }
+
+  .nav-wrap {
+    a {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+
+      @media @mobile {
+      }
+    }
+  }
+}
