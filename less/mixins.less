@@ -1,1 +1,22 @@
 // Mixins in here
+
+.flex(@display, @direction, @flow) {
+  display: @display;
+  flex-direction: @direction;
+  flex-flow: @flow;
+}
+
+.justify(@justify) {
+  justify-content: @justify;
+}
+
+.btn-style(@button-bg, @btn-font, @btn-height, @btn-width, @btn-text ,@align, @padding, @radius ) {
+  background-color: @button-bg;
+  color: @btn-font;
+  height: @btn-height;
+  width: @btn-width;
+  font-size: @btn-text;
+  text-align: @align;
+  padding-top: @padding;
+  border-radius: @radius;
+}
