@@ -15,15 +15,28 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media @mobile {
+      margin: 0 auto;
+    }
+  }
 
-    .text-content {
-      width: 48%;
-      padding-right: 1%;
+  .text-content {
+    width: 48%;
+    padding-right: 1%;
+    @media @mobile {
+      width: 100%;
+      padding-top: 5%;
+      padding-right: 3%;
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+        padding-left: 10%;
+      }
 
       img {
         border-radius: 10px;
@@ -32,6 +45,9 @@
   }
 
   .inverse-content {
+    @media @mobile {
+      flex-wrap: wrap-reverse;
+    }
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
@@ -49,6 +65,10 @@
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media @mobile {
+      width: 100%;
+      padding-top: 5%;
+    }
 
     img {
       border-radius: 10px;
@@ -60,10 +80,17 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media @mobile {
+        width: 80%;
+      }
 
       .btn {
         .btn-style(
@@ -76,6 +103,18 @@
           @padding,
           @radius
         );
+        @media @mobile {
+          .btn-style(
+            @button-bg,
+            @btn-font,
+            @btn-height,
+            350px,
+            @btn-text,
+            @align,
+            @padding,
+            @radius
+          );
+        }
       }
     }
   }
