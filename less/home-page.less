@@ -2,12 +2,14 @@
   .main-header-container {
     border-bottom: 2px dashed @navigation-border;
 
-    h2 {
-      padding-top: 20px;
-    }
+    .header-img {
+      h2 {
+        padding-top: 20px;
+      }
 
-    p {
-      padding-bottom: 20px;
+      p {
+        padding-bottom: 20px;
+      }
     }
   }
   .content-section {
@@ -18,15 +20,14 @@
     @media @mobile {
       margin: 0 auto;
     }
-  }
 
-  .text-content {
-    width: 48%;
-    padding-right: 1%;
-    @media @mobile {
-      width: 100%;
-      padding-top: 5%;
-      padding-right: 3%;
+    .text-content {
+      width: 48%;
+      padding-right: 1%;
+      @media @mobile {
+        width: 100%;
+        padding-top: 5%;
+      }
     }
 
     .img-content {
@@ -35,7 +36,6 @@
 
       @media @mobile {
         width: 100%;
-        padding-left: 10%;
       }
 
       img {
@@ -46,8 +46,9 @@
 
   .inverse-content {
     @media @mobile {
-      flex-wrap: wrap-reverse;
+      flex-flow: column-reverse;
     }
+
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
@@ -118,4 +119,40 @@
       }
     }
   }
-} // home
+
+  form {
+    font-size: 1.5rem;
+
+    input[type="text"] {
+      background-color: @btn-bg;
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      @media @mobile {
+        width: 30%;
+        padding: 0 0;
+        margin: 0 0;
+      }
+    }
+    input[type="radio"] {
+      margin: 10px;
+    }
+
+    input[type="submit"] {
+      margin: 20px;
+      .btn-style(
+        @button-bg,
+        @btn-font,
+        @btn-height,
+        @btn-width,
+        @btn-text,
+        @align,
+        @padding,
+        @radius
+      );
+
+      // home
+    }
+  }
+}
