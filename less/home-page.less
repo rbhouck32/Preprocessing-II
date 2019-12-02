@@ -2,12 +2,14 @@
   .main-header-container {
     border-bottom: 2px dashed @navigation-border;
 
-    h2 {
-      padding-top: 20px;
-    }
+    .header-img {
+      h2 {
+        padding-top: 20px;
+      }
 
-    p {
-      padding-bottom: 20px;
+      p {
+        padding-bottom: 20px;
+      }
     }
   }
   .content-section {
@@ -15,15 +17,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media @mobile {
+      margin: 0 auto;
+    }
 
     .text-content {
       width: 48%;
       padding-right: 1%;
+      @media @mobile {
+        width: 100%;
+        padding-top: 5%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+
+      @media @mobile {
+        width: 100%;
+      }
 
       img {
         border-radius: 10px;
@@ -32,6 +45,10 @@
   }
 
   .inverse-content {
+    @media @mobile {
+      flex-flow: column-reverse;
+    }
+
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
@@ -49,6 +66,10 @@
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media @mobile {
+      width: 100%;
+      padding-top: 5%;
+    }
 
     img {
       border-radius: 10px;
@@ -60,10 +81,17 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    @media @mobile {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media @mobile {
+        width: 80%;
+      }
 
       .btn {
         .btn-style(
@@ -76,7 +104,55 @@
           @padding,
           @radius
         );
+        @media @mobile {
+          .btn-style(
+            @button-bg,
+            @btn-font,
+            @btn-height,
+            350px,
+            @btn-text,
+            @align,
+            @padding,
+            @radius
+          );
+        }
       }
     }
   }
-} // home
+
+  form {
+    font-size: 1.5rem;
+
+    input[type="text"] {
+      background-color: @btn-bg;
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      @media @mobile {
+        width: 30%;
+        padding: 0 0;
+        margin: 0 0;
+      }
+    }
+    input[type="radio"] {
+      margin: 10px;
+    }
+
+    input[type="submit"] {
+      margin: 20px;
+      .btn-style(
+        @button-bg,
+        @btn-font,
+        @btn-height,
+        @btn-width,
+        @btn-text,
+        @align,
+        @padding,
+        @radius
+      );
+
+      // home
+    }
+  }
+}
